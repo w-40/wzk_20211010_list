@@ -47,16 +47,19 @@ public class MyArrayList {
 
     // 5.遍历
     public void printAll() {
+        // [中国,美国,日本]
+        System.out.println("[");
         for (int i = 0; i < size; i++) {
-            System.out.print(data[i] + " ");
+            System.out.print(data[i]);
+            if (i < size - 1) {
+                System.out.print(",");
+            }
         }
+        System.out.println("]");
     }
 
     // 6.查询元素
-    public void searchData() {
-        System.out.println("请输入要查询的元素：");
-        String element = sc.next();
-
+    public void indexOf(String element) {
         for (int i = 0; i < size; i++) {
             if (element.equals(data[i])) {
                 int index = i + 1;
@@ -67,9 +70,7 @@ public class MyArrayList {
         System.out.println("未查询到该元素");
     }
 
-    public void deleteData() {
-        System.out.println("请输入要删除的元素的位置(从1开始)：");
-        int index = sc.nextInt();
+    public void remove(int index) {
         index--;
         String[] newData = new String[data.length - 1];
         for (int i = 0; i < size; i++) {
@@ -84,7 +85,7 @@ public class MyArrayList {
         System.out.println("删除成功");
     }
 
-    public int getLength() {
+    public int size() {
         return size;
     }
 
@@ -96,11 +97,11 @@ public class MyArrayList {
         }
     }
 
-    public void clearArray() {
+    public void clear() {
         data = null;
     }
 
-    public void isData() {
+    public void contains() {
         System.out.println("请输入要判断的元素：");
         String element = sc.next();
 
@@ -113,10 +114,7 @@ public class MyArrayList {
         System.out.println("线性表中不包含该元素");
     }
 
-    public void reverseArrayList() {
-        System.out.println("请输入要查询的元素：");
-        String element = sc.next();
-
+    public void lastIndexOf(String element) {
         for (int i = size - 1; i >= 0; i--) {
             if (element.equals(data[i])) {
                 int index = i + 1;
@@ -126,5 +124,13 @@ public class MyArrayList {
             }
         }
         System.out.println("未查询到该元素");
+    }
+
+    public void set(int index, String element) {
+        data[index] = element;
+        System.out.println("修改成功");
+    }
+    public String get(int index) {
+        return data[index];
     }
 }

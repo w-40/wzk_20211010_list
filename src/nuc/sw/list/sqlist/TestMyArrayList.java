@@ -37,25 +37,29 @@ public class TestMyArrayList {
                     myList.add(index,value);
                     break;
                 case "3":
-                    myList.searchData();
+                    System.out.println("请输入要查询的元素：");
+                    String element = sc.next();
+                    myList.indexOf(element);
                     break;
                 case "4":
                     myList.printAll();
                     break;
                 case "5":
-                    myList.deleteData();
+                    System.out.println("请输入要删除的元素的位置(从1开始)：");
+                    index = sc.nextInt();
+                    myList.remove(index);
                     break;
                 case "6":
-                    System.out.println("线性表长度为：" + myList.getLength());
+                    System.out.println("线性表长度为：" + myList.size());
                     break;
                 case "7":
                     myList.isEmpty();
                     break;
                 case "8":
-                    myList.clearArray();
+                    myList.clear();
                     break;
                 case "9":
-                    myList.isData();
+                    myList.contains();
                     break;
                 case "10":
                     System.out.println("请输入要插入的元素的值");
@@ -63,7 +67,9 @@ public class TestMyArrayList {
                     myList.add(value);
                     break;
                 case "11":
-                    myList.reverseArrayList();
+                    System.out.println("请输入要查询的元素：");
+                    element = sc.next();
+                    myList.lastIndexOf(element);
                     break;
                 default:
                     System.out.println("您的输入有误");
