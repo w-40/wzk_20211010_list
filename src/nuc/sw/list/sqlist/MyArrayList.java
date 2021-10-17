@@ -48,7 +48,7 @@ public class MyArrayList {
     // 5.遍历
     public void printAll() {
         // [中国,美国,日本]
-        System.out.println("[");
+        System.out.print("[");
         for (int i = 0; i < size; i++) {
             System.out.print(data[i]);
             if (i < size - 1) {
@@ -70,7 +70,7 @@ public class MyArrayList {
         System.out.println("未查询到该元素");
     }
 
-    public void remove(int index) {
+    public String remove(int index) {
         index--;
         String[] newData = new String[data.length - 1];
         for (int i = 0; i < size; i++) {
@@ -82,18 +82,18 @@ public class MyArrayList {
         }
         data = newData;
         size--;
-        System.out.println("删除成功");
+        return data[index-1];
     }
 
     public int size() {
         return size;
     }
 
-    public void isEmpty() {
+    public boolean isEmpty() {
         if (data != null) {
-            System.out.println("线性表不为空");
+            return true;
         } else {
-            System.out.println("线性表为空");
+            return false;
         }
     }
 
@@ -101,17 +101,13 @@ public class MyArrayList {
         data = null;
     }
 
-    public void contains() {
-        System.out.println("请输入要判断的元素：");
-        String element = sc.next();
-
+    public boolean contains(String element) {
         for (int i = 0; i < size; i++) {
             if (element.equals(data[i])) {
-                System.out.println("线性表中包含该元素");
-                return;
+                return true;
             }
         }
-        System.out.println("线性表中不包含该元素");
+        return false;
     }
 
     public void lastIndexOf(String element) {

@@ -47,19 +47,32 @@ public class TestMyArrayList {
                 case "5":
                     System.out.println("请输入要删除的元素的位置(从1开始)：");
                     index = sc.nextInt();
-                    myList.remove(index);
+                    String delete = myList.remove(index);
+                    System.out.println(delete + "已经删除成功");
                     break;
                 case "6":
                     System.out.println("线性表长度为：" + myList.size());
                     break;
                 case "7":
-                    myList.isEmpty();
+                    boolean b = myList.isEmpty();
+                    if (b){
+                        System.out.println("线性表不为空");
+                    } else {
+                        System.out.println("线性表为空");
+                    }
                     break;
                 case "8":
                     myList.clear();
                     break;
                 case "9":
-                    myList.contains();
+                    System.out.println("请输入要判断的元素：");
+                    element = sc.next();
+                    boolean contain = myList.contains(element);
+                    if (contain) {
+                        System.out.println("线性表中包含元素" + contain);
+                    } else {
+                        System.out.println("线性表中不包含该元素");
+                    }
                     break;
                 case "10":
                     System.out.println("请输入要插入的元素的值");
